@@ -25,6 +25,14 @@ VALUES
 ('Drums', 'Pearl', 800, 'Percussion', TRUE),
 ;
 
+INSERT INTO instructor_instrument (instructor_instrument_id, instructor_id, instructor_instrument_type)
+VALUES
+(1, 1, 'Guitar'),  -- Linking the first instrument to the first instructor
+(2, 1, 'Violin'),  -- Linking the second instrument to the first instructor
+(3, 2, 'Drums'),  -- Linking the third instrument to the second instructor
+-- Add more rows as needed
+;
+
 INSERT INTO price (payment_id, lecture_price, skill_price, discount)
 VALUES
 (1, 30, 10, FALSE),

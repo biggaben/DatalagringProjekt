@@ -152,12 +152,12 @@ CREATE TABLE student_number (
 ALTER TABLE student_number ADD CONSTRAINT PK_student_number PRIMARY KEY (number_id,student_id);
 
 
-CREATE TABLE instructor_instruments (
- instructor_instruments_id VARCHAR(50) NOT NULL,
+CREATE TABLE instructor_instrument (
+ instructor_instrument_id VARCHAR(50) NOT NULL,
  instructor_id INT NOT NULL
 );
 
-ALTER TABLE instructor_instruments ADD CONSTRAINT PK_instructor_instruments PRIMARY KEY (instructor_instrument_id,instructor_id);
+ALTER TABLE instructor_instrument ADD CONSTRAINT PK_instructor_instrument PRIMARY KEY (instructor_instrument_id,instructor_id);
 
 
 CREATE TABLE instructor_phone (
