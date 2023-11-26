@@ -108,7 +108,7 @@ CREATE TABLE price (
  payment_id INT,
  lecture_price INT,
  skill_price INT,
- discount INT
+ discount BOOLEAN
 );
 
 ALTER TABLE price ADD CONSTRAINT PK_price PRIMARY KEY (price_id);
