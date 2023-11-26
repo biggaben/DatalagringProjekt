@@ -17,7 +17,7 @@ ALTER TABLE booking ADD CONSTRAINT PK_booking PRIMARY KEY (booking_id);
 
 CREATE TABLE contact (
  contact_id INT NOT NULL,
- contact_phone_number VARCHAR(50) NOT NULL
+ phone_number VARCHAR(50)
 );
 
 ALTER TABLE contact ADD CONSTRAINT PK_contact PRIMARY KEY (contact_id);
@@ -61,7 +61,7 @@ ALTER TABLE instrument_1 ADD CONSTRAINT PK_instrument_1 PRIMARY KEY (instrument_
 CREATE TABLE location (
  classroom_id SERIAL NOT NULL,
  room_nr INT,
- minimun_students INT,
+ minimum_students INT,
  maximum_students INT
 );
 
@@ -108,7 +108,7 @@ CREATE TABLE price (
  payment_id INT,
  lecture_price INT,
  skill_price INT,
- discount INT
+ discount BOOLEAN
 );
 
 ALTER TABLE price ADD CONSTRAINT PK_price PRIMARY KEY (price_id);
@@ -152,12 +152,12 @@ CREATE TABLE student_number (
 ALTER TABLE student_number ADD CONSTRAINT PK_student_number PRIMARY KEY (number_id,student_id);
 
 
-CREATE TABLE instructor_instruments (
- instructor_instrument_id INT NOT NULL,
+CREATE TABLE instructor_instrument (
+ instructor_instrument_id VARCHAR(50) NOT NULL,
  instructor_id INT NOT NULL
 );
 
-ALTER TABLE instructor_instruments ADD CONSTRAINT PK_instructor_instruments PRIMARY KEY (instructor_instrument_id,instructor_id);
+ALTER TABLE instructor_instrument ADD CONSTRAINT PK_instructor_instrument PRIMARY KEY (instructor_instrument_id,instructor_id);
 
 
 CREATE TABLE instructor_phone (

@@ -17,7 +17,7 @@ ALTER TABLE booking ADD CONSTRAINT PK_booking PRIMARY KEY (booking_id);
 
 CREATE TABLE contact (
  contact_id INT NOT NULL,
- contact_phone_number VARCHAR(50) NOT NULL
+ phone_number VARCHAR(50) NOT NULL
 );
 
 ALTER TABLE contact ADD CONSTRAINT PK_contact PRIMARY KEY (contact_id);
