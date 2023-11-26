@@ -61,7 +61,7 @@ ALTER TABLE instrument_1 ADD CONSTRAINT PK_instrument_1 PRIMARY KEY (instrument_
 CREATE TABLE location (
  classroom_id SERIAL NOT NULL,
  room_nr INT,
- minimun_students INT,
+ minimum_students INT,
  maximum_students INT
 );
 
@@ -153,7 +153,7 @@ ALTER TABLE student_number ADD CONSTRAINT PK_student_number PRIMARY KEY (number_
 
 
 CREATE TABLE instructor_instruments (
- instructor_instrument_id INT NOT NULL,
+ instructor_instruments_id VARCHAR(50) NOT NULL,
  instructor_id INT NOT NULL
 );
 

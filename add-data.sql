@@ -10,6 +10,13 @@ VALUES
 ('Bob', 'Brown', '456789012345', '012 Pine St', '45678', 'Thatown', NULL),
 ;
 
+INSERT INTO contact (contact_id, phone_number)
+VALUES
+(1, '555-1234'),
+(2, '555-2345'),
+(3, '555-3456'),
+;
+
 INSERT INTO instrument (type, brand, price, category, available)
 VALUES
 ('Guitar', 'Fender', 500, 'String', TRUE),
@@ -24,3 +31,11 @@ VALUES
 (2, 50, 15, FALSE),
 (3, 40, 12, FALSE),
 ;
+
+INSERT INTO location (classroom_id, room_nr, minimum_students, maximum_students)
+VALUES
+(1, 101, 5, 30),
+(2, 102, 3, 20),
+(3, 103, 10, 40),
+;
+
