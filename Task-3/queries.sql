@@ -1,8 +1,4 @@
-
-
-
--- SOLVED QUESTION 1
-EXPLAIN ANALYZE
+-- Task 3.1 Weekly number of lessons during a year
 SELECT 
     CASE EXTRACT(MONTH FROM b.start_time)
         WHEN 1 THEN 'Jan'
@@ -37,28 +33,10 @@ GROUP BY
 
 
 
-/*
--- kopplar ihop efternamn på siblings
-SELECT
-  s1.last_name,
-  COUNT(s1.student_id) - 1 AS No_of_Siblings,
-  STRING_AGG(s1.student_id::text, ', ') AS Sibling_Student_IDs
-FROM
-  student s1
-JOIN
-  student s2 ON s1.last_name = s2.last_name AND s1.student_id != s2.student_id
-GROUP BY
-  s1.last_name
-HAVING
-  COUNT(s1.student_id) > 1;
-
-*/
 
 
-
-
--- TASK 3.2 Siblingstabell
-EXPLAIN ANALYZE
+-- TASK 3.2 Siblingstable
+-- CREATE VIEW student_siblings AS
 SELECT
   No_of_Siblings,
   COUNT(*) AS No_of_Students
@@ -80,8 +58,8 @@ ORDER BY
 
 
 
--- Task 3.3, antal lektioner för specifika lärare under angivet tidsintervall
-EXPLAIN ANALYZE
+-- Task 3.3, Lessons for specific teachers during a period
+-- CREATE VIEW list_instructor_id AS
 SELECT
   i.instructor_id,
   i.first_name,
@@ -97,7 +75,7 @@ WHERE
 GROUP BY
   i.instructor_id
 HAVING
-  COUNT(*) > 0 -- X är det specifika antalet lektioner som du vill filtrera på
+  COUNT(*) > 0 -- antalet lektioner 
 ORDER BY
   No_of_Lessons DESC;
 
@@ -105,8 +83,8 @@ ORDER BY
 
 
 
---Listar alla ensambler under kommande vecka TASK 3.4
-CREATE VIEW ensambles_comming_week AS
+-- Task 3.4 List all ensambles comming week
+CREATE MATERIALIZED VIEW ensambles_comming_week1 AS
 SELECT
   to_char(b.start_time, 'Day') AS Day,
   e.genre AS Genre,
@@ -131,4 +109,4 @@ ORDER BY
   
 
 
-SELECT * FROM ensambles_comming_week;
+SELECT * FROM ensambles_comming_week1;
